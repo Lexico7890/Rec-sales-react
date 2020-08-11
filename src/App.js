@@ -2,6 +2,7 @@ import React from 'react';
 import '@material-ui/core'
 import CrearNotificacion from './components/Notificaciones/CrearNotificacion';
 import CrearArea from './components/areas/CrearArea'
+import CrearSubArea from './components/subAreas/CrearSubArea'
 
 import {
   BrowserRouter as Router,
@@ -42,8 +43,8 @@ function App() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="" className="nav-link" href="#">
-                Areas
+              <Link to="/CrearArea" className="nav-link" href="#">
+                Areas <span className="sr-only"></span>
               </Link>
             </li>
             <li className="nav-item">
@@ -62,16 +63,15 @@ function App() {
             <button className="btn btn-secondary my-2 my-sm-0" type="submit">Buscar </button>
           </form>
         </div>
-        <hr/>
-        <Switch>
-          <Route path="/CrearArea/">
+      </nav>
+      <Switch>
+          <Route path="/CrearArea">
             <CrearArea/>
           </Route>
-          <Route path="/CrearNotificacion/">
+          <Route path="/CrearNotificacion">
             <CrearNotificacion/>
           </Route>
         </Switch>
-      </nav>
     </Router>
       </div>
     </div>
