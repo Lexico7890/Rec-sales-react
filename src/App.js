@@ -2,6 +2,8 @@ import React from 'react';
 import '@material-ui/core'
 import CrearNotificacion from './components/Notificaciones/CrearNotificacion';
 import CrearArea from './components/areas/CrearArea'
+import {Provider} from 'react-redux'
+import generateStore from './redux/store'
 import CrearSubArea from './components/subAreas/CrearSubArea'
 
 import {
@@ -14,8 +16,10 @@ import {
 
 function App() {
 
+  const store = generateStore()
   
   return (
+    <Provider store={store}>
     <div className="container">
       <div className="row">
       <Router>
@@ -75,6 +79,7 @@ function App() {
     </Router>
       </div>
     </div>
+    </Provider>
   );
 }
 

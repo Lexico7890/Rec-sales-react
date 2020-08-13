@@ -15,7 +15,7 @@ const CREAR_AREAS_EXITO = "CREAR_AREAS_EXITO";
 
 
 //reducer
-export default function areasReducer(state = dataInicial, area = areaCreada, action){
+export default function areasReducer(state = dataInicial, action){
     switch(action.type){
         case OBTENER_AREAS_EXITO:
             return {...state, arrayAreas: action.playload}
@@ -45,6 +45,7 @@ export const crearAreaAccion = (areaObject) => async(dispatch, getState) => {
             type: CREAR_AREAS_EXITO,
             playload: areaObject
         })
+        console.log("todo bien")
     } catch (err) {
         console.log(err)
         

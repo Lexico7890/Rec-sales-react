@@ -22,6 +22,13 @@ const CrearSubArea = () => {
                         <label>Descripción </label>
                         <textarea className="form-control" id="exampleTextarea"></textarea>
                     </div>
+                    <div className="form-group">
+                        <label>Seleccionar Area </label>
+                        <select className="form-control" id="exampleSelect1">
+                            <option>1 </option>
+                            <option>2 </option>
+                        </select>
+                    </div>
                 </form>
             </div>
         </>
