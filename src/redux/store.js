@@ -3,9 +3,11 @@ import thunk from 'redux-thunk'
 
 
 import areasReducer from './areasDuck';
+import requestReducer from './requestDuck';
 
 const rootReducer = combineReducers({
-    areas: areasReducer
+    areas: areasReducer,
+    requests: requestReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import {db} from '../Firebase'
+//import axios from 'axios';
+import {db} from '../firebaseConfig/Firebase'
 
 //constantes
 const dataInicial = {
@@ -8,9 +8,6 @@ const dataInicial = {
     ]
 }
 
-const areaCreada = {
-    area: {}
-}
 
 //types
 const OBTENER_AREAS_EXITO = "OBTENER_AREAS_EXITO";

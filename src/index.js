@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import './Firebase';
-import 'bootswatch/dist/lux/bootstrap.min.css';
 import 'react-router-dom';
 
 ReactDOM.render(

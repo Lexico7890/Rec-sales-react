@@ -18,11 +18,6 @@ const CrearArea = () => {
     }
 
     useEffect(() => {
-        
-    }, [])
-
-    const pruebaBoton = async() => {
-        
         dispatch(obtenerAreasAccion())
         //console.log(areas)
         setArea([
@@ -30,6 +25,11 @@ const CrearArea = () => {
             areas
         ])
         console.log(areas)
+    }, [])
+
+    const pruebaBoton = async() => {
+        
+        
         /*const result = areas.map((item,index,array) => {
             console.log(item);
             console.log(index);
