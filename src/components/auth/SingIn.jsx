@@ -1,12 +1,14 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import {useForm} from 'react-hook-form'
-import {obtenerRequestsApiRest} from '../../redux/requestDuck'
-import {useDispatch} from 'react-redux'
+import {successfulUserLogin} from '../../redux/authDuck'
+import {useDispatch, useSelector} from 'react-redux'
+
 
 const SingIn = () => {
 
     const dispatch = useDispatch()
     const {handleSubmit} = useForm()
+    const estado = useSelector(store => store.auth.authError)
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -14,7 +16,8 @@ const SingIn = () => {
 
     const onSubmit= (data, e) => {
         e.preventDefault();
-        console.log(user)
+        dispatch(successfulUserLogin(user))
+        console.log('termino dispatch')
     }
     const onChange = (e) => {
         setUser({
@@ -41,6 +44,9 @@ const SingIn = () => {
                 </div>
                 <div className="input field">
                     <button className="btn pink lighten-1 z-depth-0">Login</button>
+                </div>
+                <div className="red-text center">
+                    {estado ? <p>{estado}</p> : null}
                 </div>
             </form>
         </div>
