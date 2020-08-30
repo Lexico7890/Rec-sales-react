@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import {useForm} from 'react-hook-form'
-import {obtenerRequestsAccion} from '../../redux/requestDuck'
+import {obtenerRequestsApiRest} from '../../redux/requestDuck'
 import {useDispatch} from 'react-redux'
 
 const SingIn = () => {
@@ -23,9 +23,9 @@ const SingIn = () => {
         })
     }
 
-    useEffect(() => {
-        dispatch(obtenerRequestsAccion())
-    })
+    /*useEffect(()=>{
+        dispatch(obtenerRequestsApiRest())
+    })*/
 
     return (
         <div className="container">

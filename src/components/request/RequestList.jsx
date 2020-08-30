@@ -1,21 +1,27 @@
-import React from 'react'
-import RequestSummary from './RequestSummary'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect, Fragment } from "react";
+import RequestSummary from "./RequestSummary";
+import { Link } from "react-router-dom";
 
-const RequestList = ({request}) => {
-    return (
-        <div className="request-list section">
-            {
-                request && request.map(request => {
-                    return (
-                        <Link to={'requests/' + request.id} key={request.id}>
-                            <RequestSummary request={request} key={request.id}/>
-                        </Link>
-                    )
-                })
-            }
-        </div>
-    )
-}
+const RequestList = (props) => {
+  const [datos, setDatos] = useState();
+  useEffect(() => {
+    setDatos([props.request]);
+  }, [props.request]);
 
-export default RequestList
+  return (
+    <Fragment>
+      {props.request &&
+        props.request.map((request, index) => {
+          return (
+            <div className="request-list section" key={index}>
+              <Link to={"requests/" + request.id}>
+                <RequestSummary request={request} key={request.id} />
+              </Link>
+            </div>
+          );
+        })}
+    </Fragment>
+  );
+};
+
+export default RequestList;
